@@ -2,6 +2,7 @@ import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import UsuarioLogin from "../../models/UserLogin";
 import { AuthContext } from "../../contexts/AuthContext";
+import { RotatingLines } from "react-loader-spinner";
 
 export function Login() {
   const navigate = useNavigate();
@@ -10,27 +11,27 @@ export function Login() {
     {} as UsuarioLogin
   );
 
-  const {usuario, handleLogin} = useContext(AuthContext);
+  const { usuario, handleLogin } = useContext(AuthContext);
 
-  const {isLoading} = useContext(AuthContext);
+  const {isLoading} = useContext(AuthContext) 
 
   useEffect(() => {
-    if (usuario.token !== "") {
-      navigate('/home')
+    if (usuario && usuario.token !== "") {
+        navigate('/home')
     }
-  }, [usuario])
+}, [usuario])
 
-  function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
-    setUsuarioLogin({
+function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+  setUsuarioLogin({
       ...usuarioLogin,
       [e.target.name]: e.target.value
-    })
-  }
+  })
+}
 
-  function login (e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault()
-    handleLogin(usuarioLogin)
-  }
+function login(e: ChangeEvent<HTMLFormElement>) {
+  e.preventDefault()
+  handleLogin(usuarioLogin)
+}
 
   return (
     <div className="flex flex-col items-center w-[600px] bg-white py-16 my-24 mx-auto rounded-3xl shadow-custom">
@@ -60,8 +61,18 @@ export function Login() {
         </div>
 
         <button className="w-44 h-16 bg-rose-500 text-2xl font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all" type="submit">
-          ENTRAR
+          {isLoading ? <RotatingLines
+          strokeColor="white"
+          strokeWidth="5"
+          animationDuration="0.75"
+          width="24"
+          visible={true}
+          /> : 
+          
+          <span>ENTRAR</span>}
         </button>
+
+        <hr className="border-slate-800 w-full"/>
 
         <span className="text-center text-xl font-bold">
           <p>Ainda não tem um cadastro?</p>
