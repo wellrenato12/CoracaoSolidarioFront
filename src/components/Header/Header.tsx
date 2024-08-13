@@ -1,5 +1,6 @@
-import { NavBar } from "../NavBar";
+import { NavBar } from "../NavBar/NavBar";
 import logo from '../../assets/logo.png'
+import { HandHeart } from "@phosphor-icons/react";
 
 export function Header() {
   return (
@@ -12,7 +13,15 @@ export function Header() {
             <p className="text-xl text-rose-500 italic font-medium">Ponte para o futuro: Juntos por todes</p>
           </span>
         </div>
-        <button className="w-44 h-16 bg-rose-500 text-3xl font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all">DOAR</button>
+        <div className="flex item gap-4">
+          <button className="w-44 h-16 border border-rose-500 text-2xl font-medium rounded-3xl leading-6 text-rose-500 hover:bg-rose-500 hover:text-rose-50 hover:scale-110 transition-all">
+            Acesse sua conta
+          </button>
+          <button className="flex items-center gap-3 justify-center w-44 h-16 bg-rose-500 text-2xl font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all">
+            DOAR
+            <HandHeart size={32} />
+          </button>
+        </div>
       </div>
       <NavBar />
     </header>

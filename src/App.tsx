@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { About } from "./pages/About";
-import { Contact } from "./pages/Contact";
-import { Home } from "./pages/Home";
-import { Info } from "./pages/Info/index";
-import { DefaultLayout } from "./layouts/DefaultLayout";
+import { About } from "./pages/About/About";
+import { Contact } from "./pages/Contact/Contact";
+import { Home } from "./pages/Home/Home";
+import { Info } from "./pages/Info/Info";
+import { DefaultLayout } from "./layouts/DefaultLayout/DefaultLayout";
+import { Login } from "./pages/Login/login";
+import { Register } from "./pages/Register/register";
 
 export function App() {
   return (
@@ -15,6 +17,8 @@ export function App() {
             <Route path="/about" element={<About />} />
             <Route path="/info" element={<Info />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import footer from '../../assets/footer.png'
+import footerBackground from '../../assets/footerBackground.png'
 
 export function Footer() {
   return (
@@ -18,7 +18,7 @@ export function Footer() {
         </ul>
       </nav>
       <div className='relative'>
-        <img className='w-full object-cover' src={footer} alt="Footer" />
+        <img className='w-full object-cover' src={footerBackground} alt="Footer" />
         <div className='absolute inset-0 flex items-end justify-center pb-4'>
           <p className='text-2xl font-medium text-rose-50'>&copy; 2024 - Coração Solidário - Todos os direitos reservados</p>
         </div>
