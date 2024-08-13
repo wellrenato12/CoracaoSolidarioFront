@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Login() {
   return (
-    <div className="flex flex-col items-center w-[600px] h-[750px] bg-white py-16 my-24 mx-auto rounded-3xl shadow-custom">
+    <div className="flex flex-col items-center w-[600px] bg-white py-16 my-24 mx-auto rounded-3xl shadow-custom">
       <h1 className="text-6xl font-bold border-b-8 pb-5 border-b-[#F43F5E] rounded-lg">Faça seu login</h1>
 
       <form className="mt-16 space-y-10 flex flex-col items-center">
@@ -21,7 +21,7 @@ export function Login() {
         </button>
 
         <span className="text-xl font-bold">
-          <h2 >Ainda não tem um cadastro?</h2>
+          <p>Ainda não tem um cadastro?</p>
           <Link className="text-rose-500 hover:text-red-700 transition-all" to="/register">Cadastre-se aqui!</Link>
         </span>
       </form>
