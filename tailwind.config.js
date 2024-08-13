@@ -9,7 +9,10 @@ module.exports = {
       boxShadow: {
         'custom': '0px 4px 74.7px 27px rgba(0, 0, 0, 0.1)',
       },
-    },
-  },
-  plugins: [],
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+      },
+      plugins: [],
+    }
+  }
 }
