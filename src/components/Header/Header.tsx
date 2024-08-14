@@ -8,20 +8,20 @@ export function Header() {
     <header className="max-w-7xl mx-auto mt-10 space-y-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-[36px]">
-          <img src={logo} alt="Logo" className="h-28" />
+          <img src={logo} alt="Logo" className="h-20" />
           <span className="flex flex-col items-center gap-1">
-            <h1 className="font-montserrat text-5xl text-rose-500 font-extrabold"><strong>Coração Solidário</strong></h1>
-            <p className="font-montserrat text-xl text-rose-500 italic font-medium">Ponte para o futuro: Juntos por todes</p>
+            <h1 className="font-montserrat text-[30px] text-rose-500 font-extrabold"><strong>Coração Solidário</strong></h1>
+            <p className="font-montserrat text-[14px] text-rose-500 italic font-medium">Ponte para o futuro: Juntos por todes</p>
           </span>
         </div>
         <div className="flex gap-5">
           <Link to="/login">
-            <button className="w-44 h-16 text-2xl font-medium leading-5 border border-rose-500 rounded-3xl text-rose-500 hover:bg-rose-500 hover:text-rose-50 hover:scale-110 transition-all">
+            <button className="w-[130px] h-14 text-[15px] font-medium leading-5 border-2 border-rose-500 rounded-3xl text-rose-500 hover:bg-rose-500 hover:text-rose-50 hover:scale-110 transition-all">
               Acesse sua conta
             </button>
           </Link>
           <Link to="/">
-            <button className="flex items-center justify-center gap-3 w-44 h-16 bg-rose-500 text-2xl font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all">
+            <button className="flex items-center justify-center gap-3 w-[130px] h-14 bg-rose-500 text-[15px] font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all">
               DOAR
               <HandHeart size={32} />
             </button>
