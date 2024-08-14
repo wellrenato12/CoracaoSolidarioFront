@@ -2,16 +2,40 @@ import { NavBar } from "../NavBar/NavBar";
 import logo from '../../assets/logo.png'
 import { HandHeart } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { MenuMobile } from "../MenuMobile/MenuMobile";
 
 export function Header() {
+  const [pageSize, setPageSize] = useState({
+    width: window.innerWidth,
+  })
+  const componentRender = pageSize.width > 640 ? <NavBar /> : <MenuMobile />
+
+  useEffect(() => {
+    const handleSize = () => {
+      setPageSize({
+        width: window.innerWidth,
+      })
+    }
+
+    window.addEventListener('resize', handleSize)
+
+    handleSize()
+
+    return () => {
+      window.removeEventListener('resize', handleSize)
+    }
+  }, [])
+
   return (
-    <header className="max-w-7xl mx-auto mt-10 space-y-6">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-[36px]">
+    <header className={`flex justify-around sm:justify-stretch sm:flex-col sm:block max-w-7xl mx-auto mt-12
+     sm:mt-10 sm:space-y-6 px-4`}>
+      <div className="flex gap-8 sm:gap-0 flex-col sm:flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center md:gap-9">
           <img src={logo} alt="Logo" className="h-20" />
           <span className="flex flex-col items-center gap-1">
-            <h1 className="font-montserrat text-[30px] text-rose-500 font-extrabold"><strong>Coração Solidário</strong></h1>
-            <p className="font-montserrat text-[14px] text-rose-500 italic font-medium">Ponte para o futuro: Juntos por todes</p>
+            <h1 className="font-montserrat text-xl md:text-3xl text-rose-500 font-extrabold"><strong>Coração Solidário</strong></h1>
+            <p className="font-montserrat text-xs md:text-sm text-rose-500 italic font-medium">Ponte para o futuro: Juntos por todes</p>
           </span>
         </div>
         <div className="flex gap-5">
@@ -28,7 +52,7 @@ export function Header() {
           </Link>
         </div>
       </div>
-      <NavBar />
+      {componentRender}
     </header>
   )
 }

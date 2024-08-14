@@ -9,6 +9,8 @@ interface AuthContextProps {
     handleLogout(): void
     handleLogin(usuario: UsuarioLogin): Promise<void>
     isLoading: boolean
+    isOpen: boolean,
+    handleIsOpen: () => void
 }
 
 interface AuthProviderProps {
@@ -18,6 +20,7 @@ interface AuthProviderProps {
 export const AuthContext = createContext({} as AuthContextProps)
 
 export function AuthProvider({ children }: AuthProviderProps) {
+    const [isOpen, setIsOpen] = useState(false)
 
     const [usuario, setUsuario] = useState<UsuarioLogin>({
         id: 0,
@@ -29,6 +32,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     })
 
     const [isLoading, setIsLoading] = useState(false)
+
+    function handleIsOpen() {
+        setIsOpen(!isOpen)
+    }
 
     async function handleLogin(userLogin: UsuarioLogin) {
         setIsLoading(true)
@@ -56,7 +63,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     return (
-        <AuthContext.Provider value={{ usuario, handleLogin, handleLogout, isLoading }}>
+        <AuthContext.Provider value={{
+            usuario,
+            handleLogin,
+            handleLogout,
+            isLoading,
+            isOpen,
+            handleIsOpen
+        }}>
             {children}
         </AuthContext.Provider>
     )
