@@ -66,14 +66,14 @@ export function Register() {
   }
 
   return (
-    <div className="flex flex-col items-center w-[650px] bg-white py-6 my-[50px] mx-auto rounded-3xl shadow-custom">
-    <h1 className="text-[25px] font-bold border-b-8 pb-1 border-b-[#F43F5E] rounded-lg">Faça o seu cadastro</h1>
+    <div className="flex flex-col items-center w-[340px] md:w-[650px] bg-white py-6 my-[50px] mx-auto rounded-3xl shadow-custom">
+    <h1 className="text-[23px] md:text-[25px] font-bold border-b-8 pb-1 border-b-[#F43F5E] rounded-lg">Faça o seu cadastro</h1>
 
       <form className="mt-[40px] space-y-6 flex flex-col items-center" onSubmit={cadastrarNovoUsuario}>
         <div className="flex flex-col gap-6 md:flex-row md:gap-6 w-full">
-          <div className="flex flex-col gap-2 w-full md:w-1/2">
-            <label htmlFor="nome" className="text-[18px] font-bold">Seu nome:</label>
-            <input className="bg-[#e5e5e5] w-full h-10 text-[18px] px-2 rounded-2xl" 
+          <div className="flex flex-col gap-1 w-[300px] md:w-1/2">
+            <label htmlFor="nome" className="text-[16px] md:text-[18px] font-bold">Seu nome:</label>
+            <input className="bg-[#e5e5e5] w-full h-10 text-[16px] md:text-[18px] px-2 rounded-2xl" 
               type="text"
               id="nome" 
               name="nome"
@@ -83,9 +83,9 @@ export function Register() {
             />
           </div>
 
-          <div className="flex flex-col gap-2 w-full md:w-1/2">
-            <label htmlFor="email" className="text-[18px] font-bold">Seu e-mail:</label>
-            <input className="bg-[#e5e5e5] w-full h-10 text-[18px] px-2 rounded-2xl" 
+          <div className="flex flex-col gap-1 w-full md:w-1/2">
+            <label htmlFor="email" className="text-[16px] md:text-[18px] font-bold">Seu e-mail:</label>
+            <input className="bg-[#e5e5e5] w-full h-10 text-[16px] md:text-[18px] px-2 rounded-2xl" 
               type="email" 
               id="email"
               name="email"
@@ -97,9 +97,9 @@ export function Register() {
         </div>
 
         <div className="flex flex-col gap-6 md:flex-row md:gap-6 w-full">
-          <div className="flex flex-col gap-2 w-full md:w-1/2">
-            <label htmlFor="senha" className="text-[18px] font-bold">Sua senha:</label>
-            <input className="bg-[#e5e5e5] w-full h-10 text-[18px] px-2 rounded-2xl" 
+          <div className="flex flex-col gap-1 w-full md:w-1/2">
+            <label htmlFor="senha" className="text-[16px] md:text-[18px] font-bold">Sua senha:</label>
+            <input className="bg-[#e5e5e5] w-full h-10 text-[16px] md:text-[18px] px-2 rounded-2xl" 
               type="password"
               id="senha"
               name="senha"
@@ -109,9 +109,9 @@ export function Register() {
             />
           </div>
 
-          <div className="flex flex-col gap-2 w-full md:w-1/2">
-            <label htmlFor="confirmarSenha" className="text-[18px] font-bold">Confirme sua senha:</label>
-            <input className="bg-[#e5e5e5] w-full h-10 text-[18px] px-2 rounded-2xl" 
+          <div className="flex flex-col gap-1 w-full md:w-1/2">
+            <label htmlFor="confirmarSenha" className="text-[16px] md:text-[18px] font-bold">Confirme sua senha:</label>
+            <input className="bg-[#e5e5e5] w-full h-10 text-[16px] md:text-[18px] px-2 rounded-2xl" 
               type="password"
               id="confirmarSenha"
               name="confirmarSenha"
@@ -122,9 +122,9 @@ export function Register() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 w-full">
-          <label htmlFor="foto" className="text-[18px] font-bold">Link da sua foto:</label>
-          <input className="bg-[#e5e5e5] w-full h-10 text-[18px] px-2 rounded-2xl" 
+        <div className="flex flex-col gap-1 w-full">
+          <label htmlFor="foto" className="text-[16px] md:text-[18px] font-bold">Link da sua foto:</label>
+          <input className="bg-[#e5e5e5] w-full h-10 text-[16px] md:text-[18px] px-2 rounded-2xl" 
             type="text"
             id="foto"
             name="foto"
@@ -134,13 +134,13 @@ export function Register() {
           />
         </div>
 
-        <button className="w-[130px] h-10 bg-rose-500 text-[18px] font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all" type="submit">
+        <button className="w-[130px] h-10 bg-rose-500 text-[16px] md:text-[18px] font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all" type="submit">
           Criar conta
         </button>
 
         <hr className="border-slate-800 w-full" />
 
-        <span className="text-[16px] font-bold text-center">
+        <span className="text-[14px] md:text-[16px] font-bold text-center">
           <p>Já está cadastrado?</p>
           <Link className="text-rose-500 hover:text-red-700 hover:underline transition-all" to="/login">Acesse aqui!</Link>
         </span>
