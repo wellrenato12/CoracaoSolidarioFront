@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../../contexts/AuthContext'
+import { Link } from 'react-router-dom'
 
 export function MenuMobile() {
   const { isOpen, handleIsOpen } = useContext(AuthContext)
@@ -30,12 +31,12 @@ export function MenuMobile() {
         >
           {Links.map((link) => (
             <li key={link.name} className="md:ml-8 md:my-0 my-7 font-semibold ">
-              <a
-                href={link.link}
+              <Link
+                to={link.link}
                 className="text-red-500 hover:text-red-700 transition-all"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

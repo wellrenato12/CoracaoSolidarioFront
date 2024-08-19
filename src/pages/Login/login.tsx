@@ -34,7 +34,7 @@ export function Login() {
   }
 
   return (
-    <div className="flex flex-col items-center  w-[340px]  md:w-[450px]   bg-white py-6 my-[50px] mx-auto rounded-3xl shadow-custom">
+    <div className="flex flex-col items-center  w-[340px]  md:w-[450px]   bg-white py-6 my-12 mx-auto rounded-3xl shadow-custom">
       <h1 className="text-[23px] md:text-[25px] font-bold border-b-8 pb-1 border-b-[#F43F5E] rounded-lg">Faça seu login</h1>
 
       <form className="mt-[40px] space-y-6 flex flex-col items-center" onSubmit={login}>
@@ -60,7 +60,7 @@ export function Login() {
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
         </div>
 
-        <button className="w-[120px] h-10 bg-rose-500 text-[16px] md:text-[18px] font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all" type="submit">
+        <button className="flex justify-center items-center w-[120px] h-10 bg-rose-500 text-[16px] md:text-[18px] font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all" type="submit">
           {isLoading ? <RotatingLines
             strokeColor="white"
             strokeWidth="5"

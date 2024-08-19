@@ -7,6 +7,7 @@ import { DefaultLayout } from "./layouts/DefaultLayout/DefaultLayout";
 import { Login } from "./pages/Login/login";
 import { Register } from "./pages/Register/register";
 import { AuthProvider } from "./contexts/AuthContext";
+import { Donate } from "./pages/Donate/Donate";
 
 export function App() {
   return (
@@ -15,13 +16,14 @@ export function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<DefaultLayout />}>
-             <Route index element={<Navigate to="/home" replace />} />
+              <Route index element={<Navigate to="/home" replace />} />
               <Route path="/home" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/info" element={<Info />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/donate" element={<Donate />} />
             </Route>
           </Routes>
         </BrowserRouter>
