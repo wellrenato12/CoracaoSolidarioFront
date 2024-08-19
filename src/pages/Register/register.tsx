@@ -88,7 +88,7 @@ export function Register() {
             <label htmlFor="email" className="text-[16px] md:text-[18px] font-bold">Seu e-mail:</label>
             <input className="bg-[#e5e5e5] w-full h-10 text-[16px] md:text-[18px] px-2 rounded-2xl"
               type="email"
-              id="email"
+              id="usuario"
               name="usuario"
               placeholder="E-mail"
               value={usuario.usuario}

@@ -8,6 +8,7 @@ import { Login } from "./pages/Login/login";
 import { Register } from "./pages/Register/register";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Donate } from "./pages/Donate/Donate";
+import Profile from "./pages/Profile/Profile";
 
 export function App() {
   return (
@@ -24,6 +25,7 @@ export function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/donate" element={<Donate />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
           </Routes>
         </BrowserRouter>
