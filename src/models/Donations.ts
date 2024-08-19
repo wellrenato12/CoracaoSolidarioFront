@@ -3,7 +3,7 @@ import Usuario from './User';
 
 export default interface Doacoes {
   id: number;
-  data_doacao: Date;
+  data_doacao: string;
   descricao: string;
   destino: string;
   valor: number;

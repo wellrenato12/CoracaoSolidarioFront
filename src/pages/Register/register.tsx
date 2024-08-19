@@ -89,7 +89,7 @@ export function Register() {
             <input className="bg-[#e5e5e5] w-full h-10 text-[16px] md:text-[18px] px-2 rounded-2xl"
               type="email"
               id="email"
-              name="email"
+              name="usuario"
               placeholder="E-mail"
               value={usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
