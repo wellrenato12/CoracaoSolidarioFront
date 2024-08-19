@@ -17,9 +17,7 @@ export function Contact() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para enviar os dados do formulário
     console.log('Formulário enviado:', formData);
-    // Limpar o formulário após o envio
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -38,7 +36,6 @@ export function Contact() {
               placeholder='Nome'
               value={formData.name}
               onChange={handleChange}
-              // className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500"
               required
             />
           </div>
@@ -52,7 +49,6 @@ export function Contact() {
               placeholder='Email'
               value={formData.email}
               onChange={handleChange}
-              // className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500"
               required
             />
           </div>
@@ -64,7 +60,6 @@ export function Contact() {
               placeholder='Digite aqui sua mensagem...'
               value={formData.message}
               onChange={handleChange}
-              // className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500"
               required
             ></textarea>
           </div>
