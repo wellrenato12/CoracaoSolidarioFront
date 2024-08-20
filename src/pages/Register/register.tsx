@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Usuario from "../../models/User";
 import { cadastrarUsuario } from "../../services/Service";
+import { toastAlerta } from "../../util/toastAlerta";
 
 export function Register() {
   const navigate = useNavigate()
@@ -52,15 +53,15 @@ export function Register() {
 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
-        alert('Usuário cadastrado com sucesso')
+        toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
-        alert('Erro ao cadastrar o Usuário')
+        toastAlerta('Erro ao cadastrar o Usuário', 'erro')
       }
 
     } else {
-      alert('Dados inconsistentes. Verifique as informações de cadastro.')
+      toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
       setUsuario({ ...usuario, senha: "" })
       setConfirmaSenha("")
     }

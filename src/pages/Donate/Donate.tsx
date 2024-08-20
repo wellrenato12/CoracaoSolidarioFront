@@ -6,6 +6,7 @@ import type Categoria from "../../models/Category";
 import type Doacoes from "../../models/Donations";
 import { buscar, cadastrar } from "../../services/Service";
 import { ConfirmDonate } from "../../components/Donation/ConfirmDonate/ConfirmDonate";
+import { toastAlerta } from "../../util/toastAlerta";
 
 export function Donate() {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ export function Donate() {
 
   async function donate() {
     if (!usuario) {
-      alert('Usuário não autenticado.');
+      toastAlerta('Usuário não autenticado.', 'info');
       return;
     }
 
@@ -66,14 +67,14 @@ export function Donate() {
           Authorization: token,
         }
       })
-      alert("Doação efetuada com sucesso!")
+      toastAlerta("Doação efetuada com sucesso!", 'sucesso')
       navigate('/home')
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou, favor logar novamente')
+        toastAlerta('O token expirou, favor logar novamente', 'info')
         handleLogout()
       } else {
-        alert('Erro ao cadastrar a doação');
+        toastAlerta('Erro ao cadastrar a doação', 'erro');
       }
     }
 
@@ -103,7 +104,7 @@ export function Donate() {
 
   useEffect(() => {
     if (!isLogin) {
-      alert("Você precisa estar logado");
+      toastAlerta("Você precisa estar logado", 'info');
       navigate('/login');
     }
   }, [isLogin, navigate]);

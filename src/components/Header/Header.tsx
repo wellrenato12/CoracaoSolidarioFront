@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { MenuMobile } from "../MenuMobile/MenuMobile";
 import { AuthContext } from "../../contexts/AuthContext";
+import { toastAlerta } from "../../util/toastAlerta";
 
 export function Header() {
   const navigate = useNavigate()
@@ -19,7 +20,7 @@ export function Header() {
 
   function logout() {
     handleLogout()
-    alert('Usuário deslogado com sucesso')
+    toastAlerta('Usuário deslogado com sucesso', 'sucesso')
     navigate('/login')
   }
 

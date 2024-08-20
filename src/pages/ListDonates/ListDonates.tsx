@@ -5,6 +5,7 @@ import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
 import CardDonation from "../../components/Donation/cardDonation/CardDonation";
 import { useNavigate } from "react-router-dom";
+import { toastAlerta } from "../../util/toastAlerta";
 
 export function ListDonates() {
   const [doacoes, setDoacoes] = useState<Doacoes[]>([])
@@ -33,7 +34,7 @@ export function ListDonates() {
 
   useEffect(() => {
     if (!isLogin) {
-      alert("Você precisa estar logado");
+      toastAlerta("Você precisa estar logado", 'info');
       navigate('/login');
     }
   }, [isLogin, navigate]);
