@@ -4,12 +4,16 @@ import type Doacoes from "../../models/Donations"
 import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
 import CardDonation from "../../components/Donation/cardDonation/CardDonation";
+import { useNavigate } from "react-router-dom";
 
 export function ListDonates() {
   const [doacoes, setDoacoes] = useState<Doacoes[]>([])
 
+  const navigate = useNavigate()
+
   const { usuario } = useContext(AuthContext);
   const token = usuario.token;
+  const isLogin = usuario.token !== "";
 
   async function buscarDoacoes() {
     try {
@@ -19,13 +23,20 @@ export function ListDonates() {
         },
       });
     } catch (error: any) {
-      alert(`Erro no servidor: ${error}`)
+      console.log(error)
     }
   }
 
   useEffect(() => {
     buscarDoacoes();
   }, [doacoes.length]);
+
+  useEffect(() => {
+    if (!isLogin) {
+      alert("Você precisa estar logado");
+      navigate('/login');
+    }
+  }, [isLogin, navigate]);
 
   return (
     <>
