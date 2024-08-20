@@ -56,7 +56,7 @@ export function Header() {
                 <SignOut size={32} />
                 Sair
               </button>
-              <Link className="flex flex-col items-center hover:text-rose-500 hover:scale-110 transition-all" to="/profile">
+              <Link className="flex flex-col items-center hover:text-rose-500 hover:scale-110 transition-all" to={`/profile/${usuario.id}`}>
                 <User size={32} />
                 Perfil
               </Link>

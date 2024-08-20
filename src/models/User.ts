@@ -6,6 +6,6 @@ export default interface Usuario {
     usuario: string;
     senha: string;
     foto: string;
-    doacao?: Doacoes | null;
+    doacao?: Doacoes[] | null;
 
 } 

@@ -25,7 +25,7 @@ export function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/donate" element={<Donate />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/:id" element={<Profile />} />
             </Route>
           </Routes>
         </BrowserRouter>
