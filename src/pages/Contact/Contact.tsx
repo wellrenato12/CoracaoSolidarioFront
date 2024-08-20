@@ -24,7 +24,7 @@ export function Contact() {
   return (
     <div className='flex items-center flex-col px-4'>
       <div className="flex flex-col items-center w-full max-w-lg bg-white py-6 my-12 mx-auto rounded-3xl shadow-custom">
-        <h1 className="text-lg md:text-xl lg:text-2xl text-center font-bold border-b-8 pb-1 border-b-[#F43F5E] rounded-lg w-full max-w-md">
+        <h1 className="text-base md:text-xl lg:text-2xl text-center font-bold border-b-8 pb-1 border-b-[#F43F5E] rounded-lg w-full max-w-md">
           Alguma dúvida ou sugestão? Entre em contato conosco!
         </h1>
 
