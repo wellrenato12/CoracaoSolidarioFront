@@ -43,22 +43,22 @@ function Profile() {
     }, [usuario.token, navigate])
 
   return (
-      <div className="flex flex-col items-center max-w-7xl bg-white  py-6 my-12 mx-auto rounded-3xl shadow-custom">
-        <div className="flex flex-col gap-10">
+      <div className="flex flex-col items-center w-[370px] md:max-w-7xl bg-white  py-6 my-12 mx-auto rounded-3xl shadow-custom">
+        <div className="flex flex-col gap-5 md:gap-10">
 
-            <div className="flex gap-10 justify-around items-center">
-                <div className="border-2 rounded-full border-rose-500 w-52 h-52">
+            <div className="flex gap-10 justify-center md:justify-around items-center">
+                <div className="border-2 rounded-full border-rose-500 w-20 md:w-52 md:h-52">
                     <img 
                     src={usuario.foto !== "" ? usuario.foto : defaultProfilePic} 
                     alt={`Foto do perfil de ${usuario.nome}`} className="rounded-full"/>
                 </div>
                 <div className="text-right text-zinc-800">
-                    <p className="uppercase font-bold text-5xl">{usuario.nome}</p>
+                    <p className="uppercase font-bold text-3xl">{usuario.nome}</p>
                     <p className="italic">{usuario.usuario}</p>
                 </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 border-2 rounded-l-2xl h-96 w-[800px] overflow-y-scroll py-5 shadow-inner">
+            <div className="flex flex-wrap justify-center gap-4 border-2 rounded-l-2xl h-96 w-[350px] md:w-[800px] overflow-y-scroll py-4 shadow-inner">
                 {doacoes.map((doacao) => {
                     return (
                         <CardDonation doacao={doacao} />
