@@ -19,7 +19,7 @@ function Profile() {
 
   async function buscarUsuario() {
     try {
-      await buscar(`/usuarios/${id}`, (dados: any) => {
+      await buscar(`/usuarios/${id}`, (dados: Usuario) => {
         setUser(dados);
       }, {
         headers: {

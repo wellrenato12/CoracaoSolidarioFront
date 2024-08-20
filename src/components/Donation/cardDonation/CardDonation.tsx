@@ -33,9 +33,10 @@ function CardDonation({ doacao }: CardDonationProps) {
                 <h1 className="font-bold text-[15px] md:text-[30px]">R$ {doacao.valor.toFixed(2)}</h1>
             </div>
             <div className="bg-white text-center p-2">
+                <p className="pt-2 font-bold text-lg">{doacao.usuario?.nome}</p>
                 <p className="pt-2">{doacao.descricao}</p>
                 <p className="pt-2 font-semibold italic">{doacao.destino}</p>
-                <p className="pt-2 text-gray-500">{displayDate}</p> {/* Adicionado o displayDate */}
+                <p className="pt-2 text-gray-500">{displayDate}</p>
             </div>
         </div>
     );
