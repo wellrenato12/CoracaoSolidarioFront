@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 export function MenuMobile() {
   const { isOpen, handleIsOpen } = useContext(AuthContext)
   const Links = [
-    { name: 'HOME', link: '/home' },
-    { name: 'ABOUT', link: '/about' },
-    { name: 'INFO', link: '/info' },
-    { name: 'CONTACT', link: '/contact' },
+    { name: 'INÍCIO', link: '/home' },
+    { name: 'QUEM SOMOS', link: '/about' },
+    { name: 'O QUE FAZEMOS', link: '/info' },
+    { name: 'CONTATO', link: '/contact' },
   ]
 
   return (
