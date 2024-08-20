@@ -2,21 +2,36 @@ import donate from '../../assets/donate.jpg'
 import home from '../../assets/home.svg'
 import brasil from '../../assets/brasilB.svg'
 import balao from '../../assets/balao.svg'
+import planeta from './../../assets/planeta.png';
+import musculo from './../../assets/musculo.png';
 
 export function Home() {
   return (
     <>
       <img src={donate} className="rounded-sm mt-12 h-[200px] md:h-[300px] xl:h-[500px] w-full object-cover" alt="" />
-      <div className="space-y-12 max-w-7xl mx-auto my-12 px-4 md:px-8">
-        <h2 className="text-center text-rose-700 text-2xl font-medium">ODS 1 ONU - Erradicação da pobreza</h2>
-        <p className="text-center text-rose-800 text-4xl md:text-5xl font-bold">Doações transformam o mundo!</p>
+      <div className="flex flex-col space-y-12 max-w-7xl mx-auto my-12 px-4 md:px-8 justify-center items-center">
+        <h2 className=" w-[15em] md:w-[20em] text-center text-roseOscuro text-[25px] md:text-5xl font-bold border-b-4 p-5 border-roseOscuro">Doações transformam o mundo!</h2>
 
-        <div className="flex flex-col md:flex-row items-center justify-around py-12 text-rose-700 space-y-8 md:space-y-0">
-            <div className="max-w-[90%] md:max-w-[50%]">
-              <strong className='text-2xl'>Qual é a importancia da doação?</strong>
+        <div className="flex flex-col md:flex-row items-center justify-around py-12 text-rose-700 space-y-8 md:space-y-0 gap-4">
+            <div className="flex flex-col max-w-[90%] md:max-w-[50%]">
+              <div className='flex flex-col bg-roseFucsia text-white p-4 rounded-lg mb-6'>
+              <strong className='text-[18px] md:text-2xl mb-4'>Qual é a importancia da doação?</strong>
               <p>Doar não é apenas um ato de generosidade; é uma ferramenta poderosa para transformar o mundo. Com cada doação, você ajuda a criar oportunidades para quem mais precisa e contribui para erradicar a pobreza.</p><br></br>
-              <p>🌍 <strong>Apoie o ODS 1: </strong>A pobreza extrema afeta milhões de pessoas, mas juntos podemos mudar essa realidade. O ODS 1 da ONU foca em erradicar a pobreza em todas as suas formas até 2030. Sua doação é um passo concreto em direção a esse objetivo.</p><br></br>
-              <p>💪 <strong>Faça sua Doação Valer: </strong>Cada contribuição faz a diferença, proporcionando acesso à educação, saúde e recursos essenciais. Você está ajudando a quebrar o ciclo da pobreza e a construir um futuro mais justo.</p>           
+              </div>
+              <div className='flex items-center gap-4'>
+                <img src={planeta} alt="Pobreza no Mundo" className="w-[60px] h-[60px]" />
+                <div>
+                  <strong>Apoie o ODS 1</strong>
+                  <p className='text-justify'>A pobreza extrema afeta milhões de pessoas, mas juntos podemos mudar essa realidade. O ODS 1 da ONU foca em erradicar a pobreza em todas as suas formas até 2030. Sua doação é um passo concreto em direção a esse objetivo.</p><br></br>
+                </div>
+              </div>
+              <div className='flex items-center gap-4'>
+                <div>
+                  <strong>Faça sua Doação Valer </strong>
+                  <p className='text-justify'>Cada contribuição faz a diferença, proporcionando acesso à educação, saúde e recursos essenciais. Você está ajudando a quebrar o ciclo da pobreza e a construir um futuro mais justo.</p> 
+                </div>
+                <img src={musculo} alt="valor" className="w-[60px] h-[60px]" />
+              </div>         
             </div>
           <img className='max-w-[90%] md:max-w-[50%]' src={home} alt="" />
         </div>
@@ -68,13 +83,14 @@ export function Home() {
       </div>
     </div>
 
-    <div className='space-y-12 max-w-7xl mx-auto my-12 flex justify-center py-12 px-4 md:px-8'>
-        <div className='flex flex-col md:flex-row justify-around w-full max-w-6xl mx-auto'>
-          <img className='max-w-[80%] md:max-w-[50%] flex-1 mx-auto md:mx-0' src={brasil} />
+    <div className='flex flex-col space-y-12 max-w-7xl mx-auto my-12 justify-center py-12 px-4 md:px-8'>
+        <h2 className='w-[15em] md:w-[20em] text-center text-roseOscuro text-[25px] md:text-5xl font-bold border-b-4 p-5 border-roseOscuro'> Impacto Social </h2>
+        <div className='flex flex-col md:flex-row justify-around w-full max-w-6xl mx-auto gap-4'>
+          <img className='max-w-[95%] md:max-w-[60%] flex-1 mx-auto md:mx-0 ' src={brasil} />
           
-          <div className='flex flex-col text-rose-700 flex-1 mt-8 md:mt-0'>
-          <img className='max-w-[40%] mb-6 mx-auto md:mx-0' src={balao} />
-            <div className='flex  flex-col items-center'>
+          <div className='flex flex-col flex-1 mt-8 md:mt-0'>
+          <img className='max-w-[60%] mb-6 mx-auto md:mx-0' src={balao} />
+            <div className='flex  flex-col items-center bg-white w-[20em] rounded-lg p-4 shadow-sm'>
               <p className='text-center max-w-[90%] md:max-w-[80%] mt-4'>Se cada brasileiro fizesse uma pequena contribuição, poderíamos alcançar uma mudança monumental em nosso país.</p>
               <p className='text-center max-w-[90%] md:max-w-[80%] mt-4'>Juntos, podemos construir um futuro mais justo e solidário para todos.</p>
             </div>

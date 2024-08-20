@@ -163,11 +163,9 @@
 
 .mission-image {
     flex: 1;
-    max-width: 50%;
 }
 
 .mission-image img {
-    width: 100%;
     height: auto;
     border-radius: 8px;
 }
@@ -231,7 +229,6 @@
 
 .impact-image {
     flex: 1;
-    max-width: 50%;
 }
 
 .impact-image img {
@@ -273,4 +270,62 @@
 
 .info-text p {
     margin-bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  /*ABOUT*/
+    .about-content{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .about-description{
+        font-size: 20px;
+        margin-bottom: 1px;
+    }
+
+    .about-button{
+        margin-top: 20px;
+    }
+
+    .about-image{
+        width: 70%;
+    }
+
+    /*MISSION*/
+    .mission-section{
+        margin-top: 1px;
+    }
+
+    .mission-content{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .mission-title{
+        font-size: 2rem;
+        margin-bottom: 80px;
+    }
+
+    /*IMPACT*/
+    .impact-section{
+        margin-top: 30px;
+        padding: 0px 0px;
+    }
+
+    .impact-title{
+        font-size: 2rem;
+        margin-bottom: 80px;
+    }
+    
+    .impact-content{
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
