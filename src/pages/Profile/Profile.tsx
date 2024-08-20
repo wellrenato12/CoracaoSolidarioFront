@@ -42,8 +42,6 @@ function Profile() {
         }
     }, [usuario.token, navigate])
 
-    console.log(doacoes)
-
   return (
       <div className="flex flex-col items-center max-w-7xl bg-white  py-6 my-12 mx-auto rounded-3xl shadow-custom">
         <div className="flex flex-col gap-10">

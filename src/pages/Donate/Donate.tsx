@@ -4,15 +4,14 @@ import { useNavigate } from "react-router-dom";
 import type Categoria from "../../models/Category";
 import type Doacoes from "../../models/Donations";
 import { buscar, cadastrar } from "../../services/Service";
-import { RotatingLines } from "react-loader-spinner";
-import { HandHeart } from "@phosphor-icons/react";
+import { ConfirmDonate } from "../../components/Donation/ConfirmDonate/ConfirmDonate";
 
 export function Donate() {
   const navigate = useNavigate();
 
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-
   const [doacao, setDoacao] = useState<Doacoes>({
+
     id: 0,
     valor: 0,
     descricao: '',
@@ -26,6 +25,7 @@ export function Donate() {
 
   const token = usuario.token;
   const isLogin = usuario.token !== "";
+  const isDisabled = doacao.valor <= 0 || doacao.categoria === null || doacao.destino === '' || doacao.descricao === ''
 
   function atualizarDoacao(event: ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = event.target;
@@ -36,7 +36,7 @@ export function Donate() {
         ...doacao,
         categoria: categoriaSelecionada,
       })
-    } else if(name === "destino") {
+    } else if (name === "destino") {
       setDoacao({
         ...doacao,
         destino: value,
@@ -49,9 +49,7 @@ export function Donate() {
     }
   }
 
-  async function handleDonate(event: ChangeEvent<HTMLFormElement>) {
-    event.preventDefault();
-
+  async function donate() {
     try {
       await cadastrar(`/doacoes`, doacao, setDoacao, {
         headers: {
@@ -69,6 +67,12 @@ export function Donate() {
         alert('Erro ao cadastrar a Postagem');
       }
     }
+  }
+
+  function handleDonate(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    donate()
   }
 
   const buscarCategorias = useCallback(async () => {
@@ -111,7 +115,7 @@ export function Donate() {
           <input
             required
             onChange={atualizarDoacao}
-            value={doacao.valor || ""}
+            value={doacao.valor ?? ''}
             className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl"
             type="number"
             id="valor"
@@ -134,7 +138,7 @@ export function Donate() {
             className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl"
           >
             <option value="" disabled>
-              Selecione uma categoria
+              Selecione uma categoria:
             </option>
             {categorias.map((categoria) => (
               <option
@@ -154,12 +158,15 @@ export function Donate() {
           </label>
           <select
             required
-            value={doacao.destino || "SP"}
+            value={doacao.destino || ""}
             onChange={atualizarDoacao}
             id="estado"
             name="destino"
             className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl"
           >
+            <option value="" disabled>
+              Selecione um destino:
+            </option>
             <option value="SP">São Paulo</option>
             <option value="RJ">Rio de Janeiro</option>
             <option value="PR">Paraná</option>
@@ -184,26 +191,11 @@ export function Donate() {
           />
         </div>
 
-        {/* <ConfirmDonate isLoading={isLoading} /> */}
-        <button
-          type="submit"
-          className="flex items-center justify-center gap-3 w-[130px] h-14 bg-rose-500 text-[15px] font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all"
-        >
-          {isLoading ? (
-            <RotatingLines
-              strokeColor="white"
-              strokeWidth="5"
-              animationDuration="0.75"
-              width="24"
-              visible={true}
-            />
-          ) : (
-            <span className="flex items-center gap-3">
-              DOAR
-              <HandHeart size={28} />
-            </span>
-          )}
-        </button>
+        <ConfirmDonate
+          isLoading={isLoading}
+          isDisabled={isDisabled}
+          donate={donate}
+        />
       </form>
     </div>
   );
