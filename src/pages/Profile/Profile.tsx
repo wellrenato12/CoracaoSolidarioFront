@@ -46,7 +46,7 @@ function Profile() {
   }, [id, token]);
 
   return (
-    <div className="flex flex-col items-center md:w-[80em] w-[370px] bg-white py-12 my-12 mx-auto rounded-3xl shadow-custom">
+    <div className="flex flex-col items-center max-w-7xl w-[370px] md:w-full bg-white py-12 my-12 mx-auto rounded-3xl shadow-custom">
       <div className="flex flex-col gap-5 md:gap-10">
         <div className="flex gap-10 justify-center md:justify-around items-center">
           <div className="border-2 rounded-full border-rose-500 w-20 md:w-52 md:h-52">

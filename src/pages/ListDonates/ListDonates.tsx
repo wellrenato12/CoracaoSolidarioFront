@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import type Doacoes from "../../models/Donations"
 import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -11,6 +11,7 @@ export function ListDonates() {
   const [doacoes, setDoacoes] = useState<Doacoes[]>([])
 
   const navigate = useNavigate()
+  const hasCheckedLogin = useRef(false);
 
   const { usuario } = useContext(AuthContext);
   const token = usuario.token;
@@ -32,12 +33,24 @@ export function ListDonates() {
     buscarDoacoes();
   }, [doacoes.length]);
 
+
+
   useEffect(() => {
-    if (!isLogin) {
-      toastAlerta("Você precisa estar logado", 'info');
-      navigate('/login');
+    if (!hasCheckedLogin.current) {
+      if (!isLogin) {
+        toastAlerta("Você precisa estar logado", 'info');
+        navigate('/login');
+      }
+      hasCheckedLogin.current = true;
     }
   }, [isLogin, navigate]);
+
+  // useEffect(() => {
+  //   if (!isLogin) {
+  //     toastAlerta("Você precisa estar logado", 'info');
+  //     navigate('/login');
+  //   }
+  // }, [isLogin, navigate]);
 
   return (
     <>
