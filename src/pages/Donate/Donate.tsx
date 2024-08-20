@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AuthContext } from "../../contexts/AuthContext";
 import { useCallback, useContext, useEffect, useState, type ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +12,6 @@ export function Donate() {
 
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [doacao, setDoacao] = useState<Doacoes>({
-
     id: 0,
     valor: 0,
     descricao: '',
@@ -25,7 +25,7 @@ export function Donate() {
 
   const token = usuario.token;
   const isLogin = usuario.token !== "";
-  const isDisabled = doacao.valor <= 0 || doacao.categoria === null || doacao.destino === '' || doacao.descricao === ''
+  const isDisabled = doacao.valor <= 0 || doacao.categoria === null || doacao.destino === '' || doacao.descricao === '';
 
   function atualizarDoacao(event: ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = event.target;
@@ -50,29 +50,39 @@ export function Donate() {
   }
 
   async function donate() {
+    if (!usuario) {
+      alert('Usuário não autenticado.');
+      return;
+    }
+
     try {
-      await cadastrar(`/doacoes`, doacao, setDoacao, {
+      const doacaoAtualizada = { 
+        ...doacao, 
+        usuario: usuario
+      };
+
+      await cadastrar(`/doacoes`, doacaoAtualizada, setDoacao, {
         headers: {
           Authorization: token,
         }
       })
       alert("Doação efetuada com sucesso!")
       navigate('/home')
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       if (error.toString().includes('403')) {
         alert('O token expirou, favor logar novamente')
         handleLogout()
       } else {
-        alert('Erro ao cadastrar a Postagem');
+        alert('Erro ao cadastrar a doação');
       }
     }
+
+    console.log(doacao)
   }
 
   function handleDonate(event: ChangeEvent<HTMLFormElement>) {
-    event.preventDefault()
-
-    donate()
+    event.preventDefault();
+    donate();
   }
 
   const buscarCategorias = useCallback(async () => {
