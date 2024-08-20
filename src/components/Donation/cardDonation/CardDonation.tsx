@@ -30,7 +30,7 @@ function CardDonation({ doacao }: CardDonationProps) {
         <div className="flex flex-col rounded-lg overflow-hidden border border-rose-400 justify-between w-[150px] md:w-52 shadow-lg hover:scale-110 transition-all">
             <div className="text-white flex flex-col w-full bg-rose-400 py-2 px-4 items-center">
                 <h2 className="">Valor da doação:</h2>
-                <h1 className="font-bold text-[15px] md:text-3xl">R$ {doacao.valor.toFixed(2)}</h1>
+                <h1 className="font-bold text-[15px] md:text-[30px]">R$ {doacao.valor.toFixed(2)}</h1>
             </div>
             <div className="bg-white text-center p-2">
                 <p className="pt-2">{doacao.descricao}</p>
