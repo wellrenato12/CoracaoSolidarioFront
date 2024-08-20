@@ -8,13 +8,17 @@ import { Login } from "./pages/Login/login";
 import { Register } from "./pages/Register/register";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Donate } from "./pages/Donate/Donate";
-import Profile from "./pages/Profile/Profile";
 import { ListDonates } from "./pages/ListDonates/ListDonates";
+import Profile from "./pages/Profile/Profile";
+
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 export function App() {
   return (
     <>
       <AuthProvider>
+        <ToastContainer />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<DefaultLayout />}>
