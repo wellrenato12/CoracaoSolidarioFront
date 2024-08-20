@@ -17,7 +17,7 @@ export function Donate() {
     valor: 0,
     descricao: '',
     destino: '',
-    data_doacao: '',
+    dataDoacao: '',
     categoria: null,
     usuario: null,
   });

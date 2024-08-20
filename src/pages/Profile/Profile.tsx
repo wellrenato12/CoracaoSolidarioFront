@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../contexts/AuthContext"
@@ -5,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import CardDonation from "../../components/Donation/cardDonation/CardDonation"
 import Doacoes from "../../models/Donations";
 import { buscar } from "../../services/Service";
-
+import defaultProfilePic from "../../assets/default-profile-pic.svg"
 
 function Profile() {
     const [doacoes, setDoacoes] = useState<Doacoes[]>([]);
@@ -47,17 +48,19 @@ function Profile() {
       <div className="flex flex-col items-center max-w-7xl bg-white  py-6 my-12 mx-auto rounded-3xl shadow-custom">
         <div className="flex flex-col gap-10">
 
-            <div className="flex gap-10 justify-between">
+            <div className="flex gap-10 justify-around items-center">
                 <div className="border-2 rounded-full border-rose-500 w-52 h-52">
-                    <img src={usuario.foto} alt={`Foto do perfil de ${usuario.nome}`} />
+                    <img 
+                    src={usuario.foto !== "" ? usuario.foto : defaultProfilePic} 
+                    alt={`Foto do perfil de ${usuario.nome}`} className="rounded-full"/>
                 </div>
-                <div className="text-right">
-                    <p>{usuario.nome}</p>
-                    <p>{usuario.usuario}</p>
+                <div className="text-right text-zinc-800">
+                    <p className="uppercase font-bold text-5xl">{usuario.nome}</p>
+                    <p className="italic">{usuario.usuario}</p>
                 </div>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 border-4 h-96 w-[800px] overflow-scroll py-5">
+            <div className="flex flex-wrap justify-center gap-4 border-2 rounded-l-2xl h-96 w-[800px] overflow-y-scroll py-5 shadow-inner">
                 {doacoes.map((doacao) => {
                     return (
                         <CardDonation doacao={doacao} />
