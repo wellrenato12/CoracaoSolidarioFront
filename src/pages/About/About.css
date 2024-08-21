@@ -272,60 +272,63 @@
     margin-bottom: 0;
 }
 
+/* Responsividade */
 @media only screen and (max-width: 600px) {
-  /*ABOUT*/
-    .about-content{
-        display: flex;
+    /* ABOUT */
+    .about-content {
         flex-direction: column;
         padding: 20px;
-
     }
 
     .about-title {
         font-size: 2rem;
     }
 
-    .about-description{
+    .about-description {
         font-size: 20px;
-        margin-bottom: 1px;
+        margin-bottom: 10px;
     }
 
-    .about-button{
+    .about-button {
         margin-top: 20px;
     }
 
-    .about-image{
-        width: 70%;
+    .about-image {
+        width: 100%;
+        text-align: center;
     }
 
-    /*MISSION*/
-    .mission-section{
-        margin-top: 1px;
+    .about-image img {
+        width: 90%; /* Ajusta o tamanho da imagem em telas menores */
+        max-height: 400px; /* Ajusta a altura máxima da imagem */
     }
 
-    .mission-content{
-        display: flex;
+    /* MISSION */
+    .mission-section {
+        margin-top: 40px;
+    }
+
+    .mission-title {
+        font-size: 2rem;
+        margin-bottom: 80px;
+    }
+
+    .mission-content {
         flex-direction: column-reverse;
     }
 
-    .mission-title{
-        font-size: 2rem;
-        margin-bottom: 80px;
-    }
-
-    /*IMPACT*/
-    .impact-section{
+    /* IMPACT */
+    .impact-section {
         margin-top: 30px;
-        padding: 0px 0px;
+        padding: 20px;
     }
 
-    .impact-title{
+    .impact-title {
         font-size: 2rem;
         margin-bottom: 80px;
     }
-    
-    .impact-content{
-        display: flex;
+
+    .impact-content {
         flex-direction: column-reverse;
     }
 }

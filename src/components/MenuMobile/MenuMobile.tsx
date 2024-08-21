@@ -15,7 +15,7 @@ export function MenuMobile() {
 
   return (
     <div
-      className="w-full fixed top-0 left-0 bg-rose-500"
+      className="w-full fixed top-0 left-0 bg-rose-500 z-50"
       
     >
       <div className="items-center justify-between py-4 px-7">

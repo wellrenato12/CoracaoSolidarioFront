@@ -26,14 +26,14 @@ export function Info() {
               Conectamos doadores a causas significativas, garantindo que a ajuda chegue às pessoas certas no momento certo.
             </p>
           </div>
-          <a href="#steps-section" className="info-button">Conheça Mais</a>
+          <a href="#how-we-help" className="info-button">Conheça Mais</a>
         </div>
         <div className="info-image">
           <img src={exampleImage} alt="Imagem Principal" />
         </div>
       </div>
 
-      <div className="info-what-we-do">
+      <div id="how-we-help" className="info-what-we-do">
         <div className="info-title-ajudamos">
           <h1>Como Ajudamos</h1>
         </div>
@@ -58,8 +58,8 @@ export function Info() {
         <ul className="steps-list">
           <li><strong>1. Escolha sua causa:</strong> Selecione uma causa que seja significativa para você.</li>
           <li><strong>2. Faça sua doação:</strong> Contribua com o tipo de doação que desejar.</li>
-          <li><strong>3. Acompanhamento:</strong> Receba atualizações sobre como sua doação.</li>
-          <li><strong>4. Impacto:</strong> Com a sua ajuda pordemos realizar impactos positivos nas comunidades.</li>
+          <li><strong>3. Acompanhamento:</strong> Receba atualizações sobre sua doação.</li>
+          <li><strong>4. Impacto:</strong> Com a sua ajuda podemos realizar impactos positivos nas comunidades.</li>
         </ul>
       </div>
 
