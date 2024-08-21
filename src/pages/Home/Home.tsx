@@ -52,7 +52,7 @@ export function Home() {
     <>
       <img src={donate} className="rounded-sm mt-12 h-[200px] md:h-[300px] xl:h-[500px] w-full object-cover" alt="" />
       <div id='all' className="flex flex-col space-y-12 max-w-7xl mx-auto my-12 px-4 md:px-8 justify-center items-center">
-        <h2 className=" w-[15em] md:w-[18em] text-center text-roseOscuro text-[25px] md:text-5xl font-bold border-b-4 p-5 border-roseOscuro text">Doações transformam o mundo!</h2>
+        <h2 className=" w-[12em] md:w-[18em] text-center text-roseOscuro text-[25px] md:text-5xl font-bold border-b-4 p-5 border-roseOscuro text">Doações transformam o mundo!</h2>
         <div className="flex flex-col md:flex-row items-center justify-around py-12 text-rose-700 space-y-8 md:space-y-0 gap-4">
           <div className="flex flex-col max-w-[90%] md:max-w-[50%]">
             <div className='flex flex-col bg-roseFucsia text-white p-4 rounded-lg mb-6'>
@@ -121,7 +121,7 @@ export function Home() {
       </div>
 
       <div className='flex flex-col space-y-12 max-w-7xl mx-auto my-12 justify-center py-12 px-4 md:px-8'>
-        <h2 className='w-[15em] text-center text-roseOscuro text-[25px] md:text-5xl font-bold border-b-4 p-5 border-roseOscuro mx-auto'> Impacto Social </h2>
+        <h2 className='w-[12em] text-center text-roseOscuro text-[25px] md:text-5xl font-bold border-b-4 p-5 border-roseOscuro mx-auto'> Impacto Social </h2>
         <div className='flex flex-col md:flex-row justify-around w-full max-w-6xl mx-auto gap-4'>
           <img id='brasil' className='max-w-[95%] md:max-w-[60%] flex-1 mx-auto md:mx-0 ' src={brasil} />
 
