@@ -47,7 +47,7 @@ export function Header() {
           <img src={logo} alt="Logo" className="h-20" />
           <span className="flex flex-col items-center gap-1">
             <h1 className="font-montserrat text-xl md:text-3xl text-rose-500 font-extrabold"><strong>Coração Solidário</strong></h1>
-            <p className="font-montserrat text-xs md:text-sm text-rose-500 italic font-medium">Ponte para o futuro: Juntos por todes</p>
+            <h3 className="font-montserrat text-xs md:text-sm text-rose-500 italic font-medium">Ponte para o futuro: Juntos por todes</h3>
           </span>
         </div>
         <div className="flex gap-5">
