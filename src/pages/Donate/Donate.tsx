@@ -110,7 +110,7 @@ export function Donate() {
   }, [isLogin, navigate]);
 
   return (
-    <div className="flex flex-col items-center w-[340px] md:w-[450px] bg-white py-6 my-12 mx-auto rounded-3xl shadow-custom">
+    <div className="flex flex-col items-center w-[340px] md:w-[450px] bg-white py-6 my-12 mx-auto rounded-3xl shadow-custom transition-all duration-300 hover:shadow-lg">
       <h1 className="text-[23px] md:text-[25px] font-bold border-b-8 pb-1 border-b-[#F43F5E] rounded-lg">
         Faça sua doação
       </h1>
@@ -127,7 +127,7 @@ export function Donate() {
             required
             onChange={atualizarDoacao}
             value={doacao.valor ?? ''}
-            className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl"
+            className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose-500 transition-shadow duration-200"
             type="number"
             id="valor"
             name="valor"
@@ -146,7 +146,7 @@ export function Donate() {
             onChange={atualizarDoacao}
             id="categoria"
             name="categoria"
-            className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl"
+            className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose-500 transition-shadow duration-200"
           >
             <option value="" disabled>
               Selecione uma categoria:
@@ -164,16 +164,16 @@ export function Donate() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label htmlFor="estado" className="text-[16px] md:text-[18px] font-bold">
+          <label htmlFor="destino" className="text-[16px] md:text-[18px] font-bold">
             Destino:
           </label>
           <select
             required
             value={doacao.destino || ""}
             onChange={atualizarDoacao}
-            id="estado"
+            id="destino"
             name="destino"
-            className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl"
+            className="bg-[#e5e5e5] w-[300px] h-10 text-[16px] md:text-[18px] px-2 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose-500 transition-shadow duration-200"
           >
             <option value="" disabled>
               Selecione um destino:
@@ -197,7 +197,7 @@ export function Donate() {
             name="descricao"
             id="descricao"
             maxLength={255}
-            className="bg-[#e5e5e5] w-[300px] h-[100px] text-[16px] md:text-[18px] px-2 py-2 rounded-2xl resize-none"
+            className="bg-[#e5e5e5] w-[300px] h-[100px] text-[16px] md:text-[18px] px-2 py-2 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-rose-500 transition-shadow duration-200"
             placeholder="Deixe sua mensagem aqui..."
           />
         </div>
