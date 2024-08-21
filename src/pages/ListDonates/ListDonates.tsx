@@ -6,7 +6,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import CardDonation from "../../components/Donation/cardDonation/CardDonation";
 import { useNavigate } from "react-router-dom";
 import { toastAlerta } from "../../util/toastAlerta";
-import { Hearts } from "react-loader-spinner";
+import { Hearts, Oval } from "react-loader-spinner";
 
 export function ListDonates() {
   const [doacoes, setDoacoes] = useState<Doacoes[]>([])
@@ -70,7 +70,19 @@ export function ListDonates() {
         <h1 className="text-center text-[#c72944] text-[25px] md:text-5xl w-2/3 font-bold border-b-4 p-5 border-[#c72944]">Lista de doações</h1>
         <h2 className='flex flex-col items-center sm:flex-row text-[18px] md:text-2xl font-bold mb-4 text text-rose-500'>
           Total arrecadado:
-          <span className="text-emerald-600 ml-4">{valorFormatado}</span>
+          <span className="text-emerald-600 ml-4">{isLoading ? (
+            <Oval
+            visible={true}
+            height="35"
+            width="35"
+            color="#059669"
+            ariaLabel="oval-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+          ) : (
+            valorFormatado
+          )}</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto justify-items-center gap-8 my-20">
