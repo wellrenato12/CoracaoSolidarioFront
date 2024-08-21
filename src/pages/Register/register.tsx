@@ -55,6 +55,7 @@ export function Register() {
         toastAlerta('Usuário cadastrado com sucesso', 'sucesso');
       } catch (error) {
         toastAlerta('Erro ao cadastrar o Usuário', 'erro');
+        console.log(error)
       }
     } else {
       toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro');
