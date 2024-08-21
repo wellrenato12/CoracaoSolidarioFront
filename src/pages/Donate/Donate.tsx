@@ -183,6 +183,11 @@ export function Donate() {
             <option value="PR">Paraná</option>
             <option value="RS">Rio Grande do Sul</option>
             <option value="PE">Pernambuco</option>
+            <option value="MA">Maranhão</option>
+            <option value="AM">Amazonas</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="CE">Ceará</option>
+            <option value="BA">Bahia</option>
           </select>
         </div>
 

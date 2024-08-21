@@ -87,7 +87,9 @@ export function Contact() {
           <FacebookLogo className='hover:text-rose-500 hover:scale-110 transition-all duration-200 cursor-pointer' size={32} weight='bold' />
         </div>
 
-        <hr className="border-slate-800 w-full max-w-lg" />
+        
+
+        <hr className="border-slate-800 w-full max-w-lg"   />
 
         <p className='text-lg font-medium'>Redes Sociais</p>
       </div>
