@@ -9,8 +9,24 @@ import processImage1 from './../../assets/voluntario.jpg';
 import processImage2 from './../../assets/separar.jpg'; 
 import processImage3 from './../../assets/dar.jpg'; 
 import whatWeDoImage from './../../assets/doacao3.png'; 
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export function Info() {
+
+  useGSAP(() => {
+    gsap.from('.info-container, .texto-animado , p, img', {
+      scrollTrigger: {
+        trigger: '.info-container'
+      },
+      y: 80,
+      opacity: 0,
+      duration: 1,
+      delay: -.5,
+      stagger: .5
+    })
+  }, [])
+
   return (
     <div className="info-container">
       <div className="info-title">
@@ -35,7 +51,7 @@ export function Info() {
 
       <div id="how-we-help" className="info-what-we-do">
         <div className="info-title-ajudamos">
-          <h1>Como Ajudamos</h1>
+          <h1 className='texto-animado'>Como Ajudamos</h1>
         </div>
         <div className="content">
           <div className="image-section">

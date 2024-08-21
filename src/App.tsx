@@ -23,7 +23,7 @@ export function App() {
           <div className="relative">
             <Routes>
               <Route path="/" element={<DefaultLayout />}>
-                <Route index element={<Navigate to="/home" replace />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/info" element={<Info />} />
