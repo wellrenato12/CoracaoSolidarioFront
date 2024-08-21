@@ -1,0 +1,437 @@
+/* Container principal */
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Título principal */
+.info-title {
+    text-align: left;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.info-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #c72944;
+    margin: 0;
+}
+
+.info-title::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #c72944;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+/* Conteúdo principal */
+.info-content {
+    display: flex;
+    align-items: stretch;
+    background-color: #ffcad0;
+    padding: 20px;
+    border-radius: 10px;
+    color: #c92146;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.info-content::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #c92146;
+    border-radius: 0;
+}
+
+.info-box {
+    background-color: #ffcad0;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 60%;
+    height: 300px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.info-text {
+    max-width: 100%;
+}
+
+.info-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #c72944;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.info-button:hover {
+    background-color: #a5273f;
+}
+
+.info-image {
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    left: auto;
+}
+
+.info-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Seção "O que fazemos" */
+.info-what-we-do {
+    margin: 90px 0 40px 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.info-what-we-do .info-title-ajudamos {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #c72944;
+    margin-bottom: 20px; /* Ajuste a margem inferior para mais compacta */
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.info-what-we-do .info-title-ajudamos::after {
+    content: '';
+    display: block;
+    width: 100%; /* A largura da borda é igual à largura do texto */
+    height: 4px;
+    background-color: #c72944;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.info-what-we-do .info-title-ajudamos h1 {
+    font-size: 3rem;
+    color: #c72944;
+    margin: 0;
+}
+
+.info-what-we-do .content {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.info-what-we-do .image-section {
+    flex: 1;
+    margin-right: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.info-what-we-do .image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.info-what-we-do .text-section {
+    flex: 1;
+    background-color: #c72944;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.info-what-we-do .text-section ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.info-what-we-do .text-section li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Seção de etapas do processo */
+.info-steps {
+    margin-top: 100px;
+    background-color: #f7e9eb;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #c72944;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.info-steps h2 {
+    font-size: 2rem;
+    color: #c72944;
+    margin-bottom: 20px;
+}
+
+.steps-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.steps-list li {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.steps-list li strong {
+    color: #c72944;
+}
+
+/* Seção de infográfico */
+.info-infographic {
+    text-align: center;
+    margin-top: 170px;
+    margin-bottom: 100px;
+}
+
+.info-infographic h2 {
+    font-size: 2.4rem;
+    color: #c72944;
+    margin-bottom: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.info-infographic h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #c72944;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.infographic-process {
+    margin-bottom: 40px;
+    background-color: #fbe4e4;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.infographic-process h3 {
+    font-size: 2rem;
+    color: #c72944;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid #c72944;
+    padding-bottom: 10px;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.process-step {
+    flex: 1;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.process-step img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #c72944;
+}
+
+.process-step h4 {
+    font-size: 1.6rem;
+    color: #c72944;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.process-step p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Seção de histórias */
+.infographic-stories {
+    background-color: #c72944;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 170px;
+}
+
+.infographic-stories h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 10px;
+}
+
+.story-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.story-image img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid #c72944;
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Responsividade */
+
+/* Ajuste do container principal */
+@media (max-width: 1280px) {
+    .info-container {
+        padding: 15px;
+    }
+
+    .info-what-we-do .info-title-ajudamos::after {
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Ajuste do título principal */
+@media (max-width: 768px) {
+    .info-title h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Ajuste do conteúdo principal */
+@media (max-width: 992px) {
+    .info-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-box {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .info-image {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Ajuste da seção "O que fazemos" */
+@media (max-width: 768px) {
+    .info-what-we-do .info-title-ajudamos {
+        font-size: 2rem;
+        padding-left: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .info-what-we-do .info-title-ajudamos::after {
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .info-what-we-do .content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .info-what-we-do .image-section {
+        margin-right: 0;
+    }
+
+    .info-what-we-do .text-section {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+}
+
+/* Ajuste da seção de etapas do processo */
+@media (max-width: 768px) {
+    .process-steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Ajuste da seção de histórias */
+@media (max-width: 768px) {
+    .story-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
