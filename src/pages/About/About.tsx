@@ -5,19 +5,37 @@ import impacto from './../../assets/deitado.jpg';
 import brasil from './../../assets/brasil.png';
 import planeta from './../../assets/planeta.png';
 import acesso from './../../assets/coracaocaixa.png';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 export function About() {
+
+  useGSAP(() => {
+    gsap.from('.about-container, .texto-animado , p, img, h3', {
+      scrollTrigger: {
+        trigger: '.about-container'
+      },
+      y: 80,
+      opacity: 0,
+      duration: 1,
+      delay: -.5,
+      stagger: .5
+    })
+  }, [])
+
+  
+
   return (
     <div className="about-container">
       <div className="about-content">
         <div className="about-text">
           <div className="about-title-container">
-            <h1 className="about-title">Quem Somos</h1>
+            <h1 className="about-title texto-animado">Quem Somos</h1>
           </div>
           <p className="about-description">
             O Coração Solidário é um projeto dedicado a criar uma ponte para a solidariedade, proporcionando esperança e suporte através de ações comunitárias.
           </p>
-          <a href="#mission-section" className="about-button">Conheça Mais</a>
+          <a href="#mission-section" className="about-button texto-animado">Conheça Mais</a>
         </div>
         <div className="about-image">
           <img src={coracaoCaixa} alt="Coração Solidário" />

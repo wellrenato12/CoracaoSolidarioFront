@@ -13,22 +13,24 @@ gsap.registerPlugin(ScrollTrigger);
 export function Home() {
 
   useGSAP(() => {
-    gsap.from('.text , p', {
+    gsap.from('.text , p, strong', {
       scrollTrigger: {
-        trigger: 'img',
+        trigger: '.text',
         toggleActions: 'play'
       },
       y: 80,
-      duration: .8,
-      stagger: .25,
+      delay: -.5,
+      duration: 1,
+      stagger: 1,
       opacity: 0
     })
 
     gsap.from('.balls', {
       scale: 0,
       rotation: 360,
-      delay: 2.5,
-      stagger: .25
+      duration: 1.5,
+      delay: 7.5,
+      stagger: 1
     })
 
     gsap.from('#brasil, .balao', {
@@ -42,7 +44,7 @@ export function Home() {
       scale: 0,
       rotation: 360,
       opacity: 0,
-      duration: 2,
+      duration: 3,
       stagger: .5,
       ease: 'back'
     })
