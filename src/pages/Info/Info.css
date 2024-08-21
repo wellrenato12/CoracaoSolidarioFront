@@ -1,9 +1,11 @@
+/* Container principal */
 .info-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* Título principal */
 .info-title {
     text-align: left;
     margin-bottom: 40px;
@@ -29,6 +31,7 @@
     margin: 0;
 }
 
+/* Conteúdo principal */
 .info-content {
     display: flex;
     align-items: stretch;
@@ -108,6 +111,7 @@
     box-shadow: none;
 }
 
+/* Seção "O que fazemos" */
 .info-what-we-do {
     margin: 90px 0 40px 0;
     padding: 20px;
@@ -188,6 +192,7 @@
     font-size: 1.2rem;
 }
 
+/* Seção de etapas do processo */
 .info-steps {
     margin-top: 100px;
     background-color: #f7e9eb;
@@ -217,6 +222,7 @@
     color: #c72944;
 }
 
+/* Seção de infográfico */
 .info-infographic {
     text-align: center;
     margin-top: 170px;
@@ -298,6 +304,7 @@
     line-height: 1.6;
 }
 
+/* Seção de histórias */
 .infographic-stories {
     background-color: #c72944;
     border-radius: 12px;
@@ -341,4 +348,84 @@
     font-size: 1.2rem;
     line-height: 1.6;
     color: #444;
+}
+
+/* Responsividade */
+
+/* Ajuste do container principal */
+@media (max-width: 1200px) {
+    .info-container {
+        padding: 15px;
+    }
+}
+
+/* Ajuste do título principal */
+@media (max-width: 768px) {
+    .info-title h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Ajuste do conteúdo principal */
+@media (max-width: 992px) {
+    .info-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-box {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .info-image {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Ajuste da seção "O que fazemos" */
+@media (max-width: 768px) {
+    .info-what-we-do .info-title-ajudamos {
+        font-size: 2rem;
+        padding-left: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .info-what-we-do .content {
+        flex-direction: column;
+    }
+
+    .info-what-we-do .image-section {
+        margin-right: 0;
+    }
+
+    .info-what-we-do .text-section {
+        margin-top: 20px;
+        max-width: 100%;
+    }
+}
+
+/* Ajuste da seção de etapas do processo */
+@media (max-width: 768px) {
+    .process-steps {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Ajuste da seção de histórias */
+@media (max-width: 768px) {
+    .story-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .story-image img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 }
