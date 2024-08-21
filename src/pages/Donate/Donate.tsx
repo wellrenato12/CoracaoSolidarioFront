@@ -196,8 +196,13 @@ export function Donate() {
             onChange={atualizarDoacao}
             name="descricao"
             id="descricao"
+<<<<<<< Updated upstream
             maxLength={255}
             className="bg-[#e5e5e5] w-[300px] h-[100px] text-[16px] md:text-[18px] px-2 py-2 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-rose-500 transition-shadow duration-200"
+=======
+            maxLength={70}
+            className="bg-[#e5e5e5] w-[300px] h-[100px] text-[16px] md:text-[18px] px-2 py-2 rounded-2xl resize-none"
+>>>>>>> Stashed changes
             placeholder="Deixe sua mensagem aqui..."
           />
         </div>

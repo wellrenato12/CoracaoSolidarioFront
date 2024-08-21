@@ -19,6 +19,10 @@ function convertToDate(dateStr: string | null | undefined): Date | null {
 }
 
 function CardDonation({ doacao }: CardDonationProps) {
+    const valorBRL = doacao.valor.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+    })
     // Convertendo a data
     const formattedDate = convertToDate(doacao.dataDoacao);
     const displayDate = formattedDate ? new Intl.DateTimeFormat(undefined, {
@@ -27,16 +31,16 @@ function CardDonation({ doacao }: CardDonationProps) {
     }).format(formattedDate) : 'Data inválida';
 
     return (
-        <div className="flex flex-col rounded-lg overflow-hidden border border-rose-400 justify-between w-[150px] md:w-52 shadow-lg hover:scale-110 transition-all">
+        <div className="flex flex-col rounded-lg overflow-x-hidden border border-rose-400 w-[250px] shadow-lg hover:scale-105 transition-all">
             <div className="text-white flex flex-col w-full bg-rose-400 py-2 px-4 items-center">
                 <h2 className="">Valor da doação:</h2>
-                <h1 className="font-bold text-[15px] md:text-[30px]">R$ {doacao.valor.toFixed(2)}</h1>
+                <h1 className="font-bold text-[15px] md:text-[20px] flex flex-wrap justify-center"><span>{valorBRL}</span></h1>
             </div>
-            <div className="bg-white text-center p-2">
-                <p className="pt-2 font-bold text-lg">{doacao.usuario?.nome}</p>
-                <p className="pt-2">{doacao.descricao}</p>
+            <div className="bg-white text-center p-2 flex flex-col justify-between flex-1">
+                <p className="pt-2 font-bold">{doacao.usuario?.nome}</p>
+                <p className="pt-2 break-words">{doacao.descricao}</p>
                 <p className="pt-2 font-semibold italic">{doacao.destino}</p>
-                <p className="pt-2 text-gray-500">{displayDate}</p>
+                <p className="pt-2 text-gray-500 text-xs">{displayDate}</p>
             </div>
         </div>
     );

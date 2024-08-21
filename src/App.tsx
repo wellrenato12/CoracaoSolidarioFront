@@ -20,20 +20,22 @@ export function App() {
       <AuthProvider>
         <ToastContainer />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<DefaultLayout />}>
-              <Route index element={<Navigate to="/home" replace />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/info" element={<Info />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/donate" element={<Donate />} />
-              <Route path="/profile/:id" element={<Profile />} />
-              <Route path="/listdonates" element={<ListDonates />} />
-            </Route>
-          </Routes>
+          <div className="relative">
+            <Routes>
+              <Route path="/" element={<DefaultLayout />}>
+                <Route index element={<Navigate to="/home" replace />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/info" element={<Info />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/donate" element={<Donate />} />
+                <Route path="/profile/:id" element={<Profile />} />
+                <Route path="/listdonates" element={<ListDonates />} />
+              </Route>
+            </Routes>
+          </div>
         </BrowserRouter>
       </AuthProvider>
     </>

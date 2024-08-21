@@ -9,6 +9,7 @@ export function MenuMobile() {
     { name: 'INÍCIO', link: '/home' },
     { name: 'QUEM SOMOS', link: '/about' },
     { name: 'O QUE FAZEMOS', link: '/info' },
+    { name: 'LISTA DE DOACOES', link: '/listdonates' },
     { name: 'CONTATO', link: '/contact' },
   ]
 

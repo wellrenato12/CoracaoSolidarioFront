@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { toastAlerta } from '../../util/toastAlerta';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -17,7 +18,7 @@ export function Contact() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Formulário enviado:', formData);
+    toastAlerta('Mensagem enviada!', 'sucesso')
     setFormData({ name: '', email: '', message: '' });
   };
 
