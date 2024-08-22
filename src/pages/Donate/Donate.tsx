@@ -77,8 +77,6 @@ export function Donate() {
         toastAlerta('Erro ao cadastrar a doação', 'erro');
       }
     }
-
-    console.log(doacao)
   }
 
   function handleDonate(event: ChangeEvent<HTMLFormElement>) {

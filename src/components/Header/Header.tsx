@@ -18,6 +18,15 @@ export function Header() {
 
   const isLogin = usuario.token !== ""
 
+  function navigateForLogin() {
+    if (isLogin) {
+      navigate('/donate')
+    } else {
+      toastAlerta('Para doar você precisa estar logado!', 'info')
+      navigate('/login')
+    }
+  }
+
   function logout() {
     handleLogout()
     toastAlerta('Usuário deslogado com sucesso', 'sucesso')
@@ -69,12 +78,11 @@ export function Header() {
               </button>
             </Link>
           )}
-          <Link to={isLogin ? '/donate' : '/login'}>
-            <button className="flex items-center justify-center gap-3 w-[130px] h-14 bg-rose-500 text-[15px] font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all">
-              DOAR
-              <HandHeart size={32} />
-            </button>
-          </Link>
+          <button
+            onClick={navigateForLogin} className="flex items-center justify-center gap-3 w-[130px] h-14 bg-rose-500 text-[15px] font-bold rounded-3xl text-rose-50 hover:bg-red-700 hover:scale-110 transition-all">
+            DOAR
+            <HandHeart size={32} />
+          </button>
         </div>
       </div>
       {componentRender}
