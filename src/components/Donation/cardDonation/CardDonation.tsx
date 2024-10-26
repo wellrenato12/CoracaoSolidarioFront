@@ -30,6 +30,9 @@ function CardDonation({ doacao }: CardDonationProps) {
         timeStyle: 'medium'
     }).format(formattedDate) : 'Data inválida';
 
+    console.log(doacao.categoria?.nome)
+    console.log(doacao.destino?.nome)
+
     return (
         <div className="flex flex-col rounded-lg overflow-x-hidden border border-rose-400 w-[250px] shadow-lg hover:scale-105 transition-all">
             <div className="text-white flex flex-col w-full bg-rose-400 py-2 px-4 items-center">
@@ -38,8 +41,9 @@ function CardDonation({ doacao }: CardDonationProps) {
             </div>
             <div className="bg-white text-center p-2 flex flex-col justify-between flex-1">
                 <p className="pt-2 font-bold">{doacao.usuario?.nome}</p>
+                <p className="pt-2 font-bold">{doacao.categoria?.nome}</p>
                 <p className="pt-2 break-words">{doacao.descricao}</p>
-                <p className="pt-2 font-semibold italic">{doacao.destino}</p>
+                <p className="pt-2 font-semibold italic">{doacao.destino?.nome}</p>
                 <p className="pt-2 text-gray-500 text-xs">{displayDate}</p>
             </div>
         </div>

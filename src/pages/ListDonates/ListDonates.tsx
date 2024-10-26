@@ -102,7 +102,6 @@ export function ListDonates() {
           })
         )}
       </div>
-
     </div>
   )
 }

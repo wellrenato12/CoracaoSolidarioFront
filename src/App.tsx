@@ -13,30 +13,35 @@ import Profile from "./pages/Profile/Profile";
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
+import { Settings } from "./pages/Settings/settings";
+import { ChakraProvider } from "@chakra-ui/react";
 
 export function App() {
   return (
     <>
       <AuthProvider>
-        <ToastContainer />
-        <BrowserRouter>
-          <div className="relative">
-            <Routes>
-              <Route path="/" element={<DefaultLayout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/info" element={<Info />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/donate" element={<Donate />} />
-                <Route path="/profile/:id" element={<Profile />} />
-                <Route path="/listdonates" element={<ListDonates />} />
-              </Route>
-            </Routes>
-          </div>
-        </BrowserRouter>
+        < ChakraProvider >
+          <ToastContainer />
+          <BrowserRouter>
+            <div className="relative">
+              <Routes>
+                <Route path="/" element={<DefaultLayout />}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/info" element={<Info />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/donate" element={<Donate />} />
+                  <Route path="/settings" element={<Settings />} />
+                  <Route path="/profile/:id" element={<Profile />} />
+                  <Route path="/listdonates" element={<ListDonates />} />
+                </Route>
+              </Routes>
+            </div>
+          </BrowserRouter>
+        </ ChakraProvider >
       </AuthProvider>
     </>
   )
