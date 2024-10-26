@@ -7,18 +7,20 @@ import type Doacoes from "../../models/Donations";
 import { buscar, cadastrar } from "../../services/Service";
 import { ConfirmDonate } from "../../components/Donation/ConfirmDonate/ConfirmDonate";
 import { toastAlerta } from "../../util/toastAlerta";
+import type Destino from "../../models/Destination";
 
 export function Donate() {
   const navigate = useNavigate();
 
+  const [destinos, setDestinos] = useState<Destino[]>([]);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [doacao, setDoacao] = useState<Doacoes>({
     id: 0,
     valor: 0,
     descricao: '',
-    destino: '',
     dataDoacao: '',
     categoria: null,
+    destino: null,
     usuario: null,
   });
 
@@ -26,7 +28,7 @@ export function Donate() {
 
   const token = usuario.token;
   const isLogin = usuario.token !== "";
-  const isDisabled = doacao.valor <= 0 || doacao.categoria === null || doacao.destino === '' || doacao.descricao === '';
+  const isDisabled = doacao.valor <= 0 || doacao.categoria === null || doacao.destino === null || doacao.descricao === '';
 
   function atualizarDoacao(event: ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) {
     const { name, value } = event.target;
@@ -38,9 +40,10 @@ export function Donate() {
         categoria: categoriaSelecionada,
       })
     } else if (name === "destino") {
+      const destinoSelecionado = destinos.find(destino => destino.nome === value) || null;
       setDoacao({
         ...doacao,
-        destino: value,
+        destino: destinoSelecionado,
       })
     } else {
       setDoacao({
@@ -57,10 +60,11 @@ export function Donate() {
     }
 
     try {
-      const doacaoAtualizada = { 
-        ...doacao, 
+      const doacaoAtualizada = {
+        ...doacao,
         usuario: usuario
       };
+      console.log(doacao)
 
       await cadastrar(`/doacoes`, doacaoAtualizada, setDoacao, {
         headers: {
@@ -96,9 +100,22 @@ export function Donate() {
     }
   }, [token]);
 
+  const buscarDestinos = useCallback(async () => {
+    try {
+      await buscar('/destinos', setDestinos, {
+        headers: {
+          Authorization: token,
+        },
+      });
+    } catch (error) {
+      console.error("Erro ao buscar destinos:", error);
+    }
+  }, [token]);
+
   useEffect(() => {
     buscarCategorias();
-  }, [buscarCategorias]);
+    buscarDestinos()
+  }, [buscarCategorias, buscarDestinos]);
 
   useEffect(() => {
     if (!isLogin) {
@@ -167,7 +184,7 @@ export function Donate() {
           </label>
           <select
             required
-            value={doacao.destino || ""}
+            value={doacao.destino?.nome || ""}
             onChange={atualizarDoacao}
             id="destino"
             name="destino"
@@ -176,16 +193,14 @@ export function Donate() {
             <option value="" disabled>
               Selecione um destino:
             </option>
-            <option value="SP">São Paulo</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="PR">Paraná</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="PE">Pernambuco</option>
-            <option value="MA">Maranhão</option>
-            <option value="AM">Amazonas</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="CE">Ceará</option>
-            <option value="BA">Bahia</option>
+            {destinos.map((destino) => (
+              <option
+                key={destino.id}
+                value={destino.nome}
+              >
+                {destino.nome}
+              </option>
+            ))}
           </select>
         </div>
 
