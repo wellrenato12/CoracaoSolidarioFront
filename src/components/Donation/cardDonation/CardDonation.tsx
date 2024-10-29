@@ -30,9 +30,6 @@ function CardDonation({ doacao }: CardDonationProps) {
         timeStyle: 'medium'
     }).format(formattedDate) : 'Data inválida';
 
-    console.log(doacao.categoria?.nome)
-    console.log(doacao.destino?.nome)
-
     return (
         <div className="flex flex-col rounded-lg overflow-x-hidden border border-rose-400 w-[250px] shadow-lg hover:scale-105 transition-all">
             <div className="text-white flex flex-col w-full bg-rose-400 py-2 px-4 items-center">

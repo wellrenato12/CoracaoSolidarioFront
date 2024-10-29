@@ -57,8 +57,8 @@ export function Settings() {
           <div>
             {users.map((user) => {
               return (
-                <div className="flex gap-2">
-                  <p key={user.id}>{user.nome}</p>
+                <div key={user.id} className="flex gap-2">
+                  <p>{user.nome}</p>
                   <hr className="border-[1px] border-rose-500 h-5" />
                   <p>{user.usuario}</p>
                 </div>
