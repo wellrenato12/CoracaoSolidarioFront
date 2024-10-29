@@ -333,3 +333,84 @@
         flex-direction: column-reverse;
     }
 }
+.bibliography-section {
+    margin-top: 80px;
+    padding: 40px 20px;
+    border-radius: 12px; /* Aumenta o raio para um visual mais suave */
+    background-color: #f8f8f8; /* Cor de fundo suave */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito ao passar o mouse */
+}
+
+.bibliography-section:hover {
+    transform: translateY(-5px); /* Levanta a seção ao passar o mouse */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+.bibliography-section {
+    margin-top: 80px;
+    padding: 40px 20px;
+    border-radius: 12px; /* Aumenta o raio para um visual mais suave */
+    background-color: #f8f8f8; /* Cor de fundo suave */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito ao passar o mouse */
+}
+
+.bibliography-section:hover {
+    transform: translateY(-5px); /* Levanta a seção ao passar o mouse */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+.bibliography-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #c21c4e;
+    text-align: center;
+    margin-bottom: 60px; /* Aumenta o espaço abaixo do título */
+    position: relative;
+    font-family: 'Georgia', serif; /* Fonte mais elegante */
+}
+
+.bibliography-title::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: #c21c4e;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -25px; /* Ajusta a posição da linha abaixo do título */
+    border-radius: 2px; /* Bordas arredondadas para a linha */
+}
+
+.bibliography-list {
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 20px 0 0 0; /* Adiciona margem acima da lista */
+    border-radius: 8px; /* Arredonda as bordas da lista */
+    padding: 20px; /* Adiciona espaçamento interno */
+}
+
+.bibliography-list li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px; /* Aumenta o espaço entre as referências */
+    color: #333; /* Cor do texto */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+.bibliography-list li:hover {
+    color: #c21c4e; /* Muda a cor ao passar o mouse */
+}
+
+.bibliography-list li i {
+    font-style: italic; /* Estilo itálico para os títulos das publicações */
+    color: #555; /* Cor para os títulos em itálico */
+}
+
+.bibliography-list li::before {
+    content: "• "; /* Adiciona um marcador antes de cada item */
+    color: #c21c4e; /* Cor do marcador */
+    font-size: 1.5rem; /* Tamanho do marcador */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+}

@@ -23,8 +23,6 @@ export function About() {
     })
   }, [])
 
-  
-
   return (
     <div id='main'>
       <div className="about-container">
@@ -90,7 +88,24 @@ export function About() {
             </div>
           </div>
         </div>
+        {/* Seção de Bibliografia */}
+        <div id="bibliography-section" className="bibliography-section">
+          <h2 className="bibliography-title">Bibliografia</h2>
+          <ul className="bibliography-list">
+            <li>
+              PROGRAMA DAS NAÇÕES UNIDAS PARA O DESENVOLVIMENTO (PNUD). 25 países reduziram pela metade a pobreza multidimensional em 15 anos, mas 1,1 bilhão ainda vive na pobreza. Nova York, 11 de julho de 2023. Disponível em: <a href="https://www.undp.org/pt/brazil/press-releases/25-paises-reduziram-pela-metade-pobreza-multidimensional-em-15-anos-mas-11-bilhao-ainda-vive-na-pobreza" target="_blank" rel="noopener noreferrer">https://www.undp.org/pt/brazil/press-releases/25-paises-reduziram-pela-metade-pobreza-multidimensional-em-15-anos-mas-11-bilhao-ainda-vive-na-pobreza</a>. Acesso em: 29 out. 2024.
+            </li>
+            <li>
+              NERI, Marcelo C. Mapa da Nova Pobreza. Rio de Janeiro: FGV Social, 2022. 40 p. Disponível em: <a href="https://cps.fgv.br/MapaNovaPobreza" target="_blank" rel="noopener noreferrer">https://cps.fgv.br/MapaNovaPobreza</a>. Acesso em: 29 out. 2024.
+            </li>
+            <li>
+              FAO. Aumento da Fome e Insegurança Alimentar no Brasil: relatório da ONU revela dados preocupantes. 14 jul. 2023. Disponível em: <a href="https://www.cfn.org.br/index.php/noticias/aumento-da-fome-e-inseguranca-alimentar-no-brasil-relatorio-da-onu-revela-dados-preocupantes/#:~:text=Entre%202014%20e%202016%2C%20cerca,%2C9%25%20da%20popula%C3%A7%C3%A3o)." target="_blank" rel="noopener noreferrer">https://www.cfn.org.br/index.php/noticias/aumento-da-fome-e-inseguranca-alimentar-no-brasil-relatorio-da-onu-revela-dados-preocupantes/#:~:text=Entre%202014%20e%202016%2C%20cerca,%2C9%25%20da%20popula%C3%A7%C3%A3o).</a>. Acesso em: 29 out. 2024.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
 }
+
+
