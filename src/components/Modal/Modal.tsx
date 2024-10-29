@@ -252,6 +252,9 @@ export function Modal({ onClose, isOpen, typeOperation }: ModalProps) {
     getAllDestinations()
   }, [])
 
+  console.log(categoriaSelecionada)
+  console.log(destinoSelecionado)
+
   return (
     <ModalConfig
       isOpen={isOpen}

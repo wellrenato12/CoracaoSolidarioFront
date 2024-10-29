@@ -64,7 +64,6 @@ export function Donate() {
         ...doacao,
         usuario: usuario
       };
-      console.log(doacao)
 
       await cadastrar(`/doacoes`, doacaoAtualizada, setDoacao, {
         headers: {
